@@ -149,20 +149,35 @@
     - 添加与React/Angular事件处理的对比说明
     - _Requirements: 1.2, 1.3, 2.4_
 
-- [ ] 6. 组件系统学习模块
-  - [ ] 6.1 实现组件基础练习
+- [-] 6. 组件系统学习模块
+
+
+
+
+  - [x] 6.1 实现组件基础练习
+
+
     - 创建Components.vue组件
     - 实现组件定义、注册和使用的示例
     - 添加组件生命周期的演示
     - _Requirements: 2.1, 2.2_
 
-  - [ ] 6.2 实现Props和Events通信
+  - [x] 6.2 实现Props和Events通信
+
+
+
+
     - 创建父子组件通信的交互示例
     - 实现props验证和默认值的演示
     - 添加自定义事件的实践练习
     - _Requirements: 2.2, 2.3_
 
-  - [ ] 6.3 实现Slots插槽功能
+  - [x] 6.3 实现Slots插槽功能
+
+
+
+
+
     - 创建具名插槽和作用域插槽的示例
     - 实现动态组件和异步组件的演示
     - 添加与React children和Angular content projection的对比

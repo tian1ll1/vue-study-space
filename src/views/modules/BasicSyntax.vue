@@ -483,7 +483,7 @@ function handleRunCode(code: string) {
         <CodePreview :code="currentCode" language="vue" :auto-refresh="true" />
       </div>
     </div>
-
+    
     <!-- 学习要点 -->
     <div class="learning-points">
       <h3>学习要点</h3>

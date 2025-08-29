@@ -582,5 +582,114 @@ state.version = 3.4;`,
   }
 }
 
-// 导出类型
-export type { CodeExample }
+// 按语言组织的代码示例
+export const codeExamples = {
+  javascript: {
+    'hello-world': 'console.log("Hello, Vue 3 Learning!");',
+    'variables': `let count = 5;
+const message = "Hello World";
+count = 10;
+console.log("Updated count:", count);`,
+    'arrays': `const numbers = [1, 2, 3, 4, 5];
+const doubled = numbers.map(n => n * 2);
+console.log("Doubled:", doubled);`,
+    'functions': `function greet(name) {
+  return \`Hello, \${name}!\`;
+}
+
+const result = greet("Vue Developer");
+console.log(result);`,
+    'async': `async function fetchData() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve({ message: "Data loaded!" });
+    }, 1000);
+  });
+}
+
+async function main() {
+  console.log("Loading...");
+  const data = await fetchData();
+  console.log(data);
+}
+
+main();`
+  },
+  typescript: {
+    'hello-world': 'console.log("Hello from TypeScript!");',
+    'types': `interface User {
+  name: string;
+  age: number;
+  skills: string[];
+}
+
+const user: User = {
+  name: "Alice",
+  age: 30,
+  skills: ["JavaScript", "Vue", "TypeScript"]
+};
+
+console.log(\`User: \${user.name}, Age: \${user.age}\`);`,
+    'generics': `function identity<T>(arg: T): T {
+  return arg;
+}
+
+const stringResult = identity<string>("Hello");
+const numberResult = identity<number>(42);
+
+console.log("String:", stringResult);
+console.log("Number:", numberResult);`,
+    'classes': `class Calculator {
+  private result: number = 0;
+  
+  add(value: number): Calculator {
+    this.result += value;
+    return this;
+  }
+  
+  multiply(value: number): Calculator {
+    this.result *= value;
+    return this;
+  }
+  
+  getResult(): number {
+    return this.result;
+  }
+}
+
+const calc = new Calculator();
+const result = calc.add(5).multiply(3).getResult();
+console.log("Result:", result);`
+  },
+  vue: {
+    'reactive': `import { reactive } from 'vue';
+
+const state = reactive({
+  count: 0,
+  name: "Vue.js",
+  version: 3.4
+});
+
+state.count++;
+state.name = "Vue 3";
+console.log("State:", state);`,
+    'ref': `import { ref, computed } from 'vue';
+
+const count = ref(0);
+const doubled = computed(() => count.value * 2);
+
+count.value = 5;
+console.log("Count:", count.value);
+console.log("Doubled:", doubled.value);`,
+    'watch': `import { ref, watch } from 'vue';
+
+const message = ref("Hello");
+
+watch(message, (newValue, oldValue) => {
+  console.log(\`Message changed from "\${oldValue}" to "\${newValue}"\`);
+});
+
+message.value = "Hello Vue 3!";`
+  }
+};
+
