@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Test Reactivity</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1>测试响应式</h1>
+        <p>计数: {{ count }}</p>
+        <button @click="increment">增加</button>
+        <p>消息: {{ message }}</p>
+        <button @click="updateMessage">更新消息</button>
+    </div>
+
+    <script>
+        const { createApp, ref } = Vue
+
+        createApp({
+            setup() {
+                const count = ref(0)
+                const message = ref('Hello Vue!')
+
+                function increment() {
+                    count.value++
+                }
+
+                function updateMessage() {
+                    message.value = message.value === 'Hello Vue!' ? 'Updated!' : 'Hello Vue!'
+                }
+
+                return {
+                    count,
+                    message,
+                    increment,
+                    updateMessage
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+
+</html>

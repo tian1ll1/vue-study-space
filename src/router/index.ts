@@ -203,6 +203,15 @@ const routes: RouteRecordRaw[] = [
     }
   },
   {
+    path: '/reactivity-test',
+    name: 'reactivity-test',
+    component: () => import('../views/modules/ReactivityTest.vue'),
+    meta: {
+      title: '响应式系统测试',
+      description: '测试响应式系统的基本功能'
+    }
+  },
+  {
     path: '/:pathMatch(.*)*',
     name: 'not-found',
     redirect: '/'

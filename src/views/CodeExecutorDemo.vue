@@ -219,13 +219,19 @@ function getVueExample(): string {
 const code = ref(getJavaScriptExample())
 
 // 监听代码变化，进行实时验证
+let debounceTimer: ReturnType<typeof setTimeout> | null = null
 watch(code, (newCode) => {
-    if (newCode.trim()) {
-        validationResult.value = validateCode(newCode, currentLanguage.value)
-    } else {
-        validationResult.value = null
+    if (debounceTimer) {
+        clearTimeout(debounceTimer)
     }
-}, { debounce: 500 })
+    debounceTimer = setTimeout(() => {
+        if (newCode.trim()) {
+            validationResult.value = validateCode(newCode, currentLanguage.value)
+        } else {
+            validationResult.value = null
+        }
+    }, 500)
+})
 
 // 监听语言变化
 watch(currentLanguage, (newLanguage) => {
